@@ -1,0 +1,52 @@
+package exeHorario;
+
+public class horario {
+	int horas;
+	int minutos;
+	
+	void avancaUmMinuto() {
+		if (horas>=0 && horas<23){
+			if (minutos>=0 && minutos<59) {
+				minutos++;
+			}
+			else if (minutos==59) {
+				horas++;
+				minutos=0;
+			}
+		}
+		else if (horas==23 && minutos==59) {
+			horas=0;
+			minutos=0;
+		}
+		
+	}
+	
+	void imprime() {
+		if (minutos>=0 && minutos<10) {
+			System.out.print(horas);
+			System.out.print(":0");
+			System.out.print(minutos);
+		}
+			
+		else {
+			System.out.print(horas);
+			System.out.print(":");
+			System.out.print(minutos);
+		}
+	}		
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		horario relogio = new horario();
+		
+		relogio.horas = 14;
+		relogio.minutos = 5;
+		
+		relogio.avancaUmMinuto();
+		relogio.imprime();
+
+	}
+
+}
