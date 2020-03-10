@@ -1,0 +1,42 @@
+package exeRetangulo;
+
+public class Retangulo {
+	double largura = 1;
+	double altura = 1;
+	
+	double calculaPerimetro() {
+		return (largura * 2 + altura * 2);
+	}
+	
+	double calculaArea() {
+		return (largura * altura);
+	}
+	
+	double calculaVolume(double p) {
+		return (calculaArea() * p);
+	}
+
+}
+
+public class Main{
+	
+	public static void main(String[] args) {
+		
+		Retangulo r1 = new Retangulo();
+		r1.altura = 4;
+		r1.largura = 6;
+		
+		Retangulo r2 = new Retangulo();
+		r2.altura = 8;
+		r2.largura = 10;
+		
+		
+		System.out.println(r1.calculaPerimetro());
+		System.out.println(r1.calculaArea());
+		System.out.println(r1.calculaVolume(3));
+		System.out.println(r2.calculaPerimetro());
+		System.out.println(r2.calculaArea());
+		System.out.println(r2.calculaVolume(5));
+		}
+
+}
